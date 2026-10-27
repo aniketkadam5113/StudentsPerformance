@@ -1,47 +1,80 @@
 # Student Performance Analytics
 
-Data Analytics portfolio project using Python, Pandas, NumPy, Matplotlib, Seaborn, MySQL, and Power BI.
+## Project Overview
 
-## Objective
-Analyze the Kaggle Students Performance in Exams dataset to compare subject scores, inspect distributions, and explore observed patterns across test-preparation status and student groups.
+This project analyses student examination performance to identify subject-level trends and explore how scores vary across test preparation, parental education, gender, lunch category, and race/ethnicity groups.
 
-## Repository structure
-- `data/StudentsPerformance.csv` — source dataset (check Kaggle license before redistribution)
-- `notebooks/student_performance_analysis.ipynb` — guided exploratory analysis and visualizations
-- `sql/01_create_table.sql` — MySQL table definition
-- `sql/02_analysis_queries.sql` — analytical SQL practice
-- `powerbi/README.md` — dashboard design and setup
-- `docs/data_dictionary.md` — field definitions
+The objective is to turn raw student examination data into meaningful findings using Python, SQL and Power BI.
 
-## Python setup
-From the repository root:
-```powershell
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-jupyter notebook
-```
-Open `notebooks/student_performance_analysis.ipynb` and run cells from top to bottom.
+## Business Objectives
 
-## MySQL
-1. Open MySQL Workbench and connect to your server.
-2. Run `sql/01_create_table.sql`.
-3. Right-click the `student_performance` table and choose **Table Data Import Wizard**.
-4. Select the CSV and map the eight source columns. Leave `student_id` unmapped because MySQL generates it.
-5. Run `sql/02_analysis_queries.sql`.
-6. Confirm the row count and compare SQL averages with Python.
+- Compare average Math, Reading and Writing scores.
+- Examine score differences associated with test preparation.
+- Explore academic performance across student groups.
+- Investigate relationships between subject scores.
+- Build an interactive Power BI dashboard to support data exploration.
 
-Review the `DROP TABLE` statement in the schema before running it if you already have a table with that name.
+## Tools and Technologies
 
-## Power BI
-Follow `powerbi/README.md` to connect to MySQL and create the dashboard. Add the completed `.pbix` and screenshots after verifying them locally.
+- **Python:** Pandas, NumPy, Matplotlib and Seaborn
+- **Database:** MySQL
+- **Data visualisation:** Microsoft Power BI
+- **Query language:** SQL
+- **Version control:** Git and GitHub
 
-## Dashboard plan
-**Page 1 — Overview:** student count, average scores, subject comparison, preparation-status comparison, slicers.
-**Page 2 — Group comparisons:** parental education, race/ethnicity group, math-vs-reading scatter plot, matrix of averages.
+## Project Workflow
 
-## Initial data notes
-The provided CSV has 1,000 rows and eight source columns. Initial profiling found no missing cells or exact duplicate rows. Average scores: mathematics 66.09, reading 69.17, writing 68.05. These are descriptive findings, not causal conclusions.
+1. Inspect and validate the dataset.
+2. Perform exploratory data analysis using Pandas and NumPy.
+3. Calculate descriptive statistics and compare student groups.
+4. Use MySQL to answer analytical questions.
+5. Create DAX measures and interactive Power BI reports.
+6. Validate the report results and document the findings.
 
-## Dataset attribution
-Source: Kaggle, *Students Performance in Exams*. Check the dataset's current license and attribution requirements before publishing the CSV. If redistribution is not permitted, remove the file from the repository and link to the Kaggle dataset instead.
+## Key Findings
+
+- The dataset contains 1,000 student records.
+- Average Math score: 66.09.
+- Average Reading score: 69.17.
+- Average Writing score: 68.05.
+- Students who completed test preparation had higher average scores in all three subjects than students who did not.
+- The largest observed test-preparation score difference was in Writing.
+
+These findings are descriptive. The analysis does not establish that test preparation or any demographic characteristic directly causes differences in scores.
+
+## Power BI Dashboard
+
+### Page 1 — Performance Overview
+
+Summarises student counts, average subject scores and comparisons associated with test preparation.
+
+### Page 2 — Student Group Analysis
+
+Explores differences across student groups, compares subject performance and visualises the relationship between Math and Reading scores.
+
+![Performance Overview](image.png)
+
+![Student Group Analysis](image-1.png)
+
+## Data Quality
+
+The initial data checks found no missing cells, no exact duplicate rows, and scores within the expected 0–100 range.
+
+## Limitations
+
+- The analysis is based on an observational dataset.
+- Group sizes differ.
+- The dataset contains limited information about factors affecting student performance.
+- Group averages and correlations should not be interpreted as causal relationships.
+
+## Repository Structure
+
+- `data/` — source dataset, subject to its licence
+- `notebooks/` — Python analysis
+- `sql/` — SQL scripts
+- `powerbi/` — Power BI report and screenshots
+- `docs/` — data dictionary and business insights
+
+## Conclusion
+
+This project demonstrates an end-to-end **data analytics workflow** using Python, MySQL and Power BI, from exploratory analysis through SQL-based investigation and interactive reporting.
