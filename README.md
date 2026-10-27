@@ -52,9 +52,9 @@ Summarises student counts, average subject scores and comparisons associated wit
 
 Explores differences across student groups, compares subject performance and visualises the relationship between Math and Reading scores.
 
-![Performance Overview](image.png)
+![Performance Overview](powerbi/image.png)
 
-![Student Group Analysis](image-1.png)
+![Student Group Analysis](powerbi/image-1.png)
 
 ## Data Quality
 
